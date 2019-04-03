@@ -1,0 +1,142 @@
+<div class="col-md-12">
+  <div>Please select an organization category which you are requesting a role or roles to.</div>
+  <!--<div>-->
+    <!--<input type="radio" name="cms">CMS-->
+    <!--<input type="radio" name="cms">CMS Support-->
+    <!--<input type="radio" name="cms">Facility-->
+    <!--<input type="radio" name="cms">Network-->
+    <!--<input type="radio" name="cms">Corporation-->
+  <!--</div>-->
+  <div class="card col-md-9">
+    <div class="card-body form-group" [formGroup]="form">
+      <fieldset>
+        <legend class="eqrs-label">Radio label (legend)</legend>
+        <ul class="eqrs-list">
+          <li>
+            <input id="cms" type="radio" name="orgCategory" value="CMS" formControlName="orgCategory">
+            <label for="cms">CMS</label>
+          </li>
+          <li>
+            <input id="cmsSupport" type="radio" name="orgCategory" value="CMS Support" formControlName="orgCategory">
+            <label for="cmsSupport">CMS Support</label>
+          </li>
+          <li>
+            <input id="facility" type="radio" name="orgCategory" value="Facility" formControlName="orgCategory">
+            <label for="facility">Facility</label>
+          </li>
+          <li>
+            <input id="network" type="radio" name="orgCategory" value="Network" formControlName="orgCategory">
+            <label for="network">Network</label>
+          </li>
+          <li>
+            <input id="corporation" type="radio" name="orgCategory" value="Corporation" formControlName="orgCategory">
+            <label for="corporation">Corporation</label>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<button [routerLink] = "['/product']" name="user-category-continue" (click)="setOrgValue()"> Continue </button>
+
+<div class="row container">
+  <div class="col-md-12">
+    <h1>Request user access</h1>
+  </div>
+  <div class="col-md-12">
+    <h3>User information</h3>
+    <div class="col-md-12 d-flex">
+      <div class="col-md-4">
+        <label><b>User id</b></label>
+        <p>EQRS_QUALABCD999</p>
+      </div>
+      <div class="col-md-4">
+        <label><b>Name</b></label>
+        <p>John Doe</p>
+      </div>
+      <div class="col-md-4">
+        <label><b>Email</b></label>
+        <p>test@test.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <h3>User request information</h3>
+    <div class="col-md-12">
+      <div class="row col-md-12 d-flex">
+        <div class="col-md-4">
+          <label><b>Org name</b></label>
+          <input class="eqrs-input col-md-12" id="orgName" formControlName="orgName" type="text">
+        </div>
+
+        <div class="col-md-4">
+          <label><b>Org zip code</b></label>
+          <md-input-container>
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoCounties">
+          </md-input-container>
+          <md-autocomplete #autoCounties="mdAutocomplete" >
+            <md-option *ngFor="let county of counties" [value]="county.name">{{ county.name }}</md-option>
+          </md-autocomplete>
+        </div>
+
+        <div class="col-md-4">
+          <label><b>CCN</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+      </div>
+      <div class="row col-md-12 d-flex">
+        <div class="col-md-4">
+          <label><b>Org type</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+        <div class="col-md-4">
+          <label><b>Org city</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+        <div class="col-md-4">
+          <label><b>NPI</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+      </div>
+      <div class="row col-md-12 d-flex">
+        <div class="col-md-4">
+          <label><b>Org state</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+        <div class="col-md-4">
+          <label><b>Org country</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+        <div class="col-md-4">
+          <label><b>TIN</b></label>
+          <p>EQRS_QUALABCD999</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 d-flex">
+      <div class="col-md-4">
+        <label><b>User role</b></label>
+          <select class="eqrs-select col-md-12">
+            <option value=""></option>
+            <option>Network viewer</option>
+            <option>Network facility editor</option>
+            <option>Network patient editor</option>
+            <option>Network administrator</option>
+          </select>
+          </div>
+      <div class="col-md-4">
+        <label><b>Approvers</b></label>
+        <select class="eqrs-select col-md-12">
+          <option value=""></option>
+          <option>Approver 1</option>
+          <option>Approver 2</option>
+          <option>Approver 3</option>
+          <option>Approver 4</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+

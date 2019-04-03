@@ -1,0 +1,25 @@
+<div>Please select one or more programs you are requesting a role or roles to.</div>
+<div class="card col-md-9">
+  <div class="card-body">
+    <fieldset class="checkbox-container  row">
+
+      <legend class="eqrs-label">Checkbox label</legend>
+
+      <ul class="eqrs-list  col-sm-12 col-md-8 col-xl-8">
+        <li>
+          <input id="eqrs" type="checkbox" name="programs" value="eqrs">
+          <label for="eqrs">EQRS (CROWNWeb)</label>
+        </li>
+        <li>
+          <input id="qip" type="checkbox" name="programs" value="qip">
+          <label for="qip">QIP</label>
+        </li>
+      </ul>
+
+    </fieldset>
+  </div>
+  <div>
+    <a [routerLink] = "['/user-category']"> < Previous</a>
+    <button [routerLink] = "['/organization']" name="product-continue">Continue</button>
+  </div>
+</div>
